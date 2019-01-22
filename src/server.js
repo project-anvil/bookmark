@@ -5,6 +5,8 @@ import morgan from 'morgan'
 import logger from './utils/logger'
 import { stackTraceMask } from './utils'
 
+import { saveBookmark } from './mutations/bookmarks'
+
 const { PORT = 80 } = process.env
 
 const app = express()
@@ -12,5 +14,7 @@ const app = express()
 app.use(morgan('combined', { stream: logger.stream }))
 app.use(bodyParser.json())
 app.use(stackTraceMask(logger))
+
+app.post('/', saveBookmark)
 
 app.listen(PORT)

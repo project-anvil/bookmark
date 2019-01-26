@@ -3,7 +3,10 @@ const path = require('path')
 module.exports = {
   mode: 'production',
   context: path.join(__dirname, 'src'),
-  entry: './server.js',
+  entry: {
+    bundle: './server.js',
+    db: ['sqlite3', 'pg']
+  },
   resolve: { extensions: ['*', '.js'] },
   module: {
     rules: [{
@@ -12,7 +15,7 @@ module.exports = {
     }]
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.join(__dirname, 'build')
   },
   target: 'node'

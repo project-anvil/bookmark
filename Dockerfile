@@ -18,7 +18,8 @@ COPY --from=build /app/build /app
 ENV NODE_ENV production
 ENV PORT 80
 
-RUN apk update && apk add nodejs
+RUN apk update && apk add nodejs npm
+RUN npm install knex sqlite3 pg
 
 EXPOSE 80
 

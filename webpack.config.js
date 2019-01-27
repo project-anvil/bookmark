@@ -4,8 +4,7 @@ module.exports = {
   mode: 'production',
   context: path.join(__dirname, 'src'),
   entry: {
-    bundle: './server.js',
-    db: ['sqlite3', 'pg']
+    bundle: './server.js'
   },
   resolve: { extensions: ['*', '.js'] },
   module: {
@@ -18,5 +17,6 @@ module.exports = {
     filename: '[name].js',
     path: path.join(__dirname, 'build')
   },
+  externals: {knex: 'commonjs knex'},
   target: 'node'
 }

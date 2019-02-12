@@ -16,3 +16,10 @@ $ echo schema/schema.sql | sqlite3 bookmark.db
 $ docker build -t bookmark .
 $ docker run --rm -v bookmark.db:/app/bookmark.db -p 3000:80 -d bookmark
 ```
+3. Test the container with a get and post
+
+```sh
+$ curl localhost:3000
+$ curl -XPOST -H "Content-Type: application/json" -d'{"key": "fake-key", "url": "google.com"}' localhost:3000
+$ curl localhost:3000
+```

@@ -1,4 +1,4 @@
-import { saveBookmark, readBookmarks } from '../boundary'
+import { saveBookmark, readBookmarks, boundary } from '../boundary'
 
 export const retrieve = (req, res, next) =>
   readBookmarks().then(data => res.status(200).send(data))

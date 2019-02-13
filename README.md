@@ -7,7 +7,7 @@ a small service for saving links
 
 ```sh
 $ git clone https://github.com/project-anvil/bookmark.git && cd bookmark
-$ echo schema/schema.sql | sqlite3 bookmark.db
+$ cat schema/schema.sql | sqlite3 bookmark.db
 ```
 
 2. Start the container with the database

@@ -1,10 +1,14 @@
-import { saveBookmark, readBookmarks, boundary } from '../boundary'
+import { boundary } from '../boundary'
+import { bookmark } from '../entities'
 
-export const retrieve = (req, res, next) =>
+const writeBookmark = boundary(bookmark.write)
+const readBookmarks = boundary(bookmark.read)
+
+export const read = (req, res, next) =>
   readBookmarks().then(data => res.status(200).send(data))
     .catch(next)
 
-export const bookmark = (req, res, next) =>
-  saveBookmark(req.body)
+export const write = (req, res, next) =>
+  writeBookmark(req.body)
     .then(() => res.status(201).send())
     .catch(next)

@@ -1,4 +1,4 @@
-import { boundary } from '../utils'
+import { boundary } from '../utils/boundary'
 import { bookmark } from '../entities'
 
 const writeBookmark = boundary(bookmark.write)

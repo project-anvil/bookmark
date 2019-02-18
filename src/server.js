@@ -1,5 +1,5 @@
 import bodyParser from 'body-parser'
-import express from 'express'
+import express, { Router } from 'express'
 import morgan from 'morgan'
 
 import logger from './utils/logger'
@@ -10,6 +10,14 @@ import { read, write } from './resource/bookmark'
 const { PORT = 80 } = process.env
 
 const app = express()
+
+const makeRouter = behaviors => {
+  const router = Router()
+  behaviors.forEach(({endpoint, method, behavior}) => {
+    router[method](endpoint, behavior)
+  })
+  return router
+}
 
 app.use(morgan('combined', { stream: logger.stream }))
 app.use(bodyParser.json())

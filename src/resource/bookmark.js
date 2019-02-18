@@ -12,3 +12,12 @@ export const write = (req, res, next) =>
   writeBookmark(req.body)
     .then(() => res.status(201).send())
     .catch(next)
+
+export const resources = [
+  { resource: "/bookmarks",
+    behaviors: [
+      {endpoint: "/", method: "get", behavior: read},
+      {endpoint: "/", method: "post", behavior: write}
+    ]
+  }
+];

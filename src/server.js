@@ -5,7 +5,7 @@ import morgan from 'morgan'
 import logger from './utils/logger'
 import { stackTraceMask } from './utils'
 
-import { read, write, resources } from './resource/bookmark'
+import { resources } from './resource/bookmark'
 
 const { PORT = 80 } = process.env
 

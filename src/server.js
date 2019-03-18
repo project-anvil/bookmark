@@ -3,7 +3,7 @@ import express, { Router } from 'express'
 import morgan from 'morgan'
 
 import logger from './utils/logger'
-import { stackTraceMask } from './utils'
+import { stackTraceMask, catchAsyncFailure } from './utils'
 
 import { resources } from './resource/bookmark'
 

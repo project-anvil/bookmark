@@ -14,7 +14,7 @@ const app = express()
 const makeRouter = behaviors => {
   const router = Router()
   behaviors.forEach(({endpoint, method, behavior}) => {
-    router[method](endpoint, behavior)
+    router[method](endpoint, catchAsyncFailure(behavior))
   })
   return router
 }

@@ -1,7 +1,0 @@
-{
-  "useNullAsDefault": true,
-  "client": "sqlite3",
-  "connection": {
-    "filename": "./bookmark.db"
-  }
-}

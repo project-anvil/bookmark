@@ -1,43 +1,7 @@
 {
-  "name": "renode",
+  "name": "bookmark",
   "version": "0.1.0",
   "description": "",
-  "main": "server.js",
-  "scripts": {
-    "build": "NODE_ENV=production webpack --config ./webpack.config.js --progress --colors",
-    "lint": "eslint --format=pretty src/*; exit 0",
-    "precommit": "NODE_ENV=test eslint --format=pretty src/*",
-    "prepush": "NODE_ENV=test npm test && nyc mocha -r @babel/register tests/**/*.spec.js",
-    "test": "NODE_ENV=test mocha -r @babel/register tests/**/*.spec.js"
-  },
-  "keywords": [],
-  "author": "",
+  "main": "index.js",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "http-errors": "^1.7.1",
-    "knex": "^0.16.3",
-    "morgan": "^1.9.1",
-    "winston": "^3.1.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
-    "@babel/preset-env": "^7.2.3",
-    "@babel/register": "^7.0.0",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.4",
-    "chai": "^4.2.0",
-    "eslint": "^5.11.1",
-    "eslint-formatter-pretty": "^2.0.0",
-    "eslint-plugin-babel": "^5.3.0",
-    "mocha": "^5.2.0",
-    "nodemon": "^1.18.9",
-    "sinon": "^7.2.2",
-    "webpack": "^4.28.3",
-    "webpack-cli": "^3.1.2",
-    "webpack-node-externals": "^1.7.2"
-  }
 }
